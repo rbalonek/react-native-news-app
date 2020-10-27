@@ -5,7 +5,7 @@ const { width, height } = Dimensions.get("window");
 
 const NewsCard = ({}) => {
   return (
-    <View>
+    <View style={styles.cardView}>
       <Text style={styles.title}>
         Scientists kill 85 murder hornets and capture 13 alive: This is only the
         start
@@ -21,15 +21,24 @@ const NewsCard = ({}) => {
 };
 
 const styles = StyleSheet.create({
+  cardView: {
+    backgroundColor: "white",
+    margin: width * 0.02,
+    borderRadius: width * 0.05,
+    shadowColor: "#000",
+    shadowOffset: { width: 0.5, height: 1 },
+    shadowOpacity: 0.6,
+    shadowRadius: 3,
+  },
   title: {
-    width: width,
+    marginHorizontal: width * 0.05,
     margin: width * 0.03,
     color: "black",
     fontSize: 20,
     fontWeight: "bold",
   },
   author: {
-    marginVertical: height * 0.03,
+    marginVertical: height * 0.0,
     marginHorizontal: width * 0.05,
     fontSize: 15,
     color: "gray",
@@ -43,7 +52,7 @@ const styles = StyleSheet.create({
   },
 
   description: {
-    width: width,
+    // width: width,
     marginVertical: width * 0.05,
     marginHorizontal: width * 0.02,
     // margin: width * 0.05,
