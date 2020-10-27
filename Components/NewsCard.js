@@ -3,19 +3,13 @@ import { View, StyleSheet, Text, Image, Dimensions } from "react-native";
 
 const { width, height } = Dimensions.get("window");
 
-const NewsCard = ({}) => {
+const NewsCard = ({ item }) => {
   return (
     <View style={styles.cardView}>
-      <Text style={styles.title}>
-        Scientists kill 85 murder hornets and capture 13 alive: This is only the
-        start
-      </Text>
-      <Text style={styles.author}>CBS News</Text>
-      <Image style={styles.image} />
-      <Text style={styles.description}>
-        Researchers were disturbed to see a children's playset only about 30
-        feet away form the nest.
-      </Text>
+      <Text style={styles.title}>{item.title}</Text>
+      <Text style={styles.author}>{item.author}</Text>
+      <Image style={styles.image} source={{ uri: item.urlToImage }} />
+      <Text style={styles.description}>{item.description}</Text>
     </View>
   );
 };
@@ -44,7 +38,7 @@ const styles = StyleSheet.create({
     color: "gray",
   },
   image: {
-    width: width,
+    // width: width,
     height: height / 6,
     marginLeft: width * 0.05,
     marginRight: width * 0.05,
