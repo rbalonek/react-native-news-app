@@ -1,12 +1,27 @@
 import React from "react";
-import { View, StyleSheet, Text, Image, Dimensions } from "react-native";
+import {
+  View,
+  StyleSheet,
+  Text,
+  Image,
+  Dimensions,
+  Linking,
+} from "react-native";
 
 const { width, height } = Dimensions.get("window");
 
 const NewsCard = ({ item }) => {
+  console.log(item.url);
   return (
     <View style={styles.cardView}>
-      <Text style={styles.title}>{item.title}</Text>
+      <Text
+        onPress={() => {
+          Linking.openURL(`${item.url}`); //"https://aboutreact.com"
+        }}
+        style={styles.title}
+      >
+        {item.title}
+      </Text>
       <Text style={styles.author}>{item.author}</Text>
       <Image style={styles.image} source={{ uri: item.urlToImage }} />
       <Text style={styles.description}>{item.description}</Text>
