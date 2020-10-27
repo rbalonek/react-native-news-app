@@ -11,7 +11,7 @@ import {
 const { width, height } = Dimensions.get("window");
 
 const NewsCard = ({ item }) => {
-  console.log(item.url);
+  // console.log(item.url);
   return (
     <View style={styles.cardView}>
       <Text
